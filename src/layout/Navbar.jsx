@@ -87,7 +87,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="py-3 bg-[#0000001f] w-[100%] fixed top-0 left-0 z-[999]">
+      <nav className="py-3 bg-[#00000049] w-[100%] fixed top-0 left-0 z-[999]">
         <div className="max-w-container mx-auto">
           <div className="flex justify-between gap-x-[70px] items-center">
             <div className="w-[200px]">
@@ -134,13 +134,13 @@ const Navbar = () => {
                               )}
                             </div>
                             {dropdownitem.subdrop && (
-                              <ul className="bg-white flex flex-col gap-y-3 p-5 absolute top-8 -right-5 translate-x-full opacity-0 invisible transition-all duration-200 group-hover/sub:visible group-hover/sub:opacity-100 group-hover/sub:top-0">
+                              <ul className="bg-[#545454] flex flex-col gap-y-3 p-5 absolute top-8 -right-5 translate-x-full opacity-0 invisible transition-all duration-200 group-hover/sub:visible group-hover/sub:opacity-100 group-hover/sub:top-0">
                                 {dropdownitem.subdrop.map(
                                   (subdropItem, subdropIndex) => (
                                     <li key={subdropIndex}>
                                       <Link
                                         href={subdropItem.subdropurl}
-                                        className="text-[15px] font-poppins font-medium text-[#df8033]"
+                                        className="text-[15px] font-poppins font-medium text-white"
                                       >
                                         {subdropItem.subdroptext}
                                       </Link>
