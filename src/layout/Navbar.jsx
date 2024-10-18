@@ -87,7 +87,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="py-3 bg-[#00000049] w-[100%] fixed top-0 left-0 z-[999]">
+      <nav className="py-3 bg-[#00000062] w-[100%] fixed top-0 left-0 z-[999]">
         <div className="max-w-container mx-auto">
           <div className="flex justify-between gap-x-[70px] items-center">
             <div className="w-[200px]">

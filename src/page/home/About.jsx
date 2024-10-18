@@ -2,6 +2,24 @@ import React from "react";
 import aboutpic from "../../assets/images/about-one.png";
 
 const About = () => {
+  const countData = [
+    {
+      id: 0,
+      count: "260+",
+      text: "Awards wins",
+    },
+    {
+      id: 1,
+      count: "250k+",
+      text: "Visitors Visits",
+    },
+    {
+      id: 0,
+      count: "160k+",
+      text: "Events",
+    },
+  ];
+
   return (
     <div className="pt-[90px] pb-[70px]">
       <div className="max-w-container mx-auto">
@@ -32,22 +50,19 @@ const About = () => {
                 inventore laboriosam iure vero, maxime asperiores deserunt.
               </p>
               <div className="grid grid-cols-3 gap-[30px] mt-[35px]">
-                <p className="h-[100px] w-[180px] flex flex-col justify-center items-center py-[25px] px-[20px] bg-[rgb(157,126,84,0.05)] border border-[#9d7e54] rounded-[25px] text-[35px] text-center font-poppins font-semibold leading-[30px]">
-                  260+
-                  <span className="text-[15px] block font-poppins">
-                    Awards wins
-                  </span>
-                </p>
-                <p className="h-[100px] w-[180px] flex flex-col justify-center items-center py-[25px] px-[20px] bg-[rgb(157,126,84,0.05)] border border-[#9d7e54] rounded-[25px] text-[35px] text-center font-poppins font-semibold leading-[30px] mt-[15px]">
-                  250k+
-                  <span className="text-[15px] block font-poppins">
-                    Visitors Visits
-                  </span>
-                </p>
-                <p className="h-[100px] w-[180px] flex flex-col justify-center items-center py-[25px] px-[20px] bg-[rgb(157,126,84,0.05)] border border-[#9d7e54] rounded-[25px] text-[35px] text-center font-poppins font-semibold leading-[30px]">
-                  150k+
-                  <span className="text-[15px] block font-poppins">Events</span>
-                </p>
+                {countData.map((data) => (
+                  <p
+                    key={data.id}
+                    className={`h-[100px] w-[180px] flex flex-col justify-center items-center py-[25px] px-[20px] bg-[rgb(157,126,84,0.05)] border border-[#9d7e54] rounded-[25px] text-[35px] text-center font-poppins font-semibold leading-[30px] ${
+                      data.id === 1 ? "mt-[15px]" : ""
+                    }`}
+                  >
+                    {data.count}
+                    <span className="text-[15px] block font-poppins">
+                      {data.text}
+                    </span>
+                  </p>
+                ))}
               </div>
             </div>
           </div>
