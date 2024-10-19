@@ -18,7 +18,7 @@ const Service = () => {
     {
       id: 1,
       icon: RiHotelBedLine,
-      title: "Room Amenities",
+      title: "Room Aminities",
       li1: "- Comfortable Bedding",
       li2: "- Bed Room and Pool",
       li3: "- TV and AC",

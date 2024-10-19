@@ -21,7 +21,7 @@ const About = () => {
   ];
 
   return (
-    <div className="pt-[90px] pb-[70px]">
+    <div className="py-[90px]">
       <div className="max-w-container mx-auto">
         <div className="w-full flex justify-between">
           <div className="w-[50%]">

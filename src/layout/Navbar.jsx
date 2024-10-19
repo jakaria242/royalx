@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { MdOutlineArrowDropDown } from "react-icons/md";
+import Button from "../components/Button";
 
 const Navbar = () => {
   const menuData = [
@@ -85,9 +86,34 @@ const Navbar = () => {
     },
   ];
 
+  const [scrolled, setScrolled] = useState(false);
+  const navRef = useRef();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      if (scrollY > 500) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <nav className="py-3 bg-[#00000062] w-[100%] fixed top-0 left-0 z-[999]">
+      <nav
+        className={`py-3 bg-[#00000062] w-[100%] fixed top-0 left-0 z-[999] ${
+          scrolled ? "bg-[#1e1e1e]" : "bg-[#00000036]"
+        }`}
+        ref={navRef}
+      >
         <div className="max-w-container mx-auto">
           <div className="flex justify-between gap-x-[70px] items-center">
             <div className="w-[200px]">
@@ -158,9 +184,10 @@ const Navbar = () => {
               </ul>
             </div>
             <div className="w-[250px] text-right group">
-              <button className="h-[38px] w-[130px] borde-0 bg-[#cb5c00] text-[15px] tracking-[1.5px] font-poppins font-medium text-white rounded-[30px] transition-all duration-700 hover:border-black cursor-pointer shadow-[2px_3px_3px_1px_#B9B7BD]">
-                Book Now
-              </button>
+              <Button
+                className="h-[38px] w-[130px] borde-0 bg-[#cb5c00] text-[15px] tracking-[1.5px] font-poppins font-medium text-white rounded-[30px] transition-all duration-700 hover:border-black cursor-pointer shadow-[2px_3px_3px_1px_#B9B7BD]"
+                text="Book Now"
+              />
             </div>
           </div>
         </div>
