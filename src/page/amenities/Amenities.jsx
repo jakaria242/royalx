@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -34,7 +34,7 @@ const Amenities = () => {
   ];
 
   return (
-    <div className="pt-[30px] pb-[75px] bg-[#ffff0015]">
+    <div className="pb-[80px]">
       <div className="max-w-container mx-auto">
         <div className="flex flex-col justify-center items-center gap-[10px]">
           <small className="text-[18px] text-[#1e1e1e] font-poppins font-semibold">

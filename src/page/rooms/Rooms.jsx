@@ -90,7 +90,7 @@ const Rooms = () => {
   ];
 
   return (
-    <div className="pb-[75px]">
+    <div className="pb-[80px]">
       <div className="max-w-container mx-auto">
         <div className="flex flex-col justify-center items-center gap-[10px]">
           <small className="text-[18px] text-[#1e1e1e] font-poppins font-semibold">
