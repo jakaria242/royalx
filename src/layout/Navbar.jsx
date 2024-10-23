@@ -2,97 +2,56 @@ import React, { useRef, useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import Button from "../components/Button";
+import { RiMenu4Fill } from "react-icons/ri";
 
 const Navbar = () => {
   const menuData = [
     {
       id: 0,
       text: "Home",
-      url: "#",
+      url: "/",
       dropdown: null,
     },
     {
       id: 1,
       text: "About Us",
-      url: "#",
+      url: "/about",
       dropdown: null,
     },
     {
       id: 2,
       text: "Category",
-      url: "#",
-      dropdown: [
-        {
-          id: 0,
-          droptext: "Fast Class",
-          dropurl: "#",
-          subdrop: null,
-        },
-        {
-          id: 1,
-          droptext: "Secend Class",
-          dropurl: "#",
-          subdrop: [
-            {
-              id: 0,
-              subdroptext: "Single Bed",
-              subdropurl: "#",
-            },
-            {
-              id: 1,
-              subdroptext: "Double Bed",
-              subdropurl: "#",
-            },
-          ],
-        },
-        {
-          id: 2,
-          droptext: "Thard Class",
-          dropurl: "#",
-          subdrop: null,
-        },
-      ],
+      url: "service",
+      dropdown: null,
     },
     {
       id: 3,
-      text: "Rooms",
-      url: "#",
-      dropdown: [
-        {
-          id: 0,
-          droptext: "AC Room",
-          dropurl: "#",
-          subdrop: null,
-        },
-        {
-          id: 1,
-          droptext: "NON AC Room",
-          dropurl: "#",
-          subdrop: null,
-        },
-      ],
+      text: "Amenities",
+      url: "/amenities",
+      dropdown: null,
     },
     {
       id: 4,
-      text: "Testimonials",
-      url: "#",
+      text: "Rooms",
+      url: "/rooms",
       dropdown: null,
     },
     {
       id: 5,
-      text: "Blogs",
-      url: "#",
+      text: "Testimonials",
+      url: "/testimonial",
       dropdown: null,
     },
   ];
 
   const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navRef = useRef();
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      if (scrollY > 500) {
+      if (scrollY > 350) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -106,6 +65,10 @@ const Navbar = () => {
     };
   }, []);
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen); // Toggle menu visibility
+  };
+
   return (
     <>
       <nav
@@ -114,19 +77,19 @@ const Navbar = () => {
         }`}
         ref={navRef}
       >
-        <div className="max-w-container mx-auto">
-          <div className="flex justify-between gap-x-[70px] items-center">
-            <div className="w-[200px]">
+        <div className="max-w-container mx-4 sm:mx-5 md:mx-6 xl:mx-auto">
+          <div className="flex justify-between gap-[20px] lg:gap-x-[30px] xl:gap-x-[70px] items-center">
+            <div className="w-auto lg:w-[150px] xl:w-[200px]">
               <Link
                 to="/"
-                className="text-[25px] font-playfair font-bold text-[#df8033]"
+                className="text-[22px] sm:text-[24px] md:text-[28px]  font-playfair font-bold text-[#df8033]"
               >
                 ROYAL
                 <span className="text-white">X</span>
               </Link>
             </div>
 
-            <div className="w-[650px]">
+            <div className="hidden lg:block md:w-[600px] xl:w-[650px]">
               <ul className="flex justify-center items-center gap-[20px] text-white">
                 {menuData.map((item, index) => (
                   <li key={index} className="relative group">
@@ -183,7 +146,39 @@ const Navbar = () => {
                 ))}
               </ul>
             </div>
-            <div className="w-[250px] text-right group">
+
+            {/* <div className="w-[40px] h-[30px] md:w-[40px] md:h-[40px] lg:hidden bg-[#cb5c00] flex justify-center items-center cursor-pointer">
+              <RiMenu4Fill className=" text-[18px] sm:text-[22px] md:text-[26px]  text-white" />
+            </div> */}
+
+            {/* Menu icon for mobile */}
+            <div
+              className="w-[40px] h-[30px] md:w-[40px] md:h-[40px] lg:hidden bg-[#cb5c00] flex justify-center items-center cursor-pointer"
+              onClick={toggleMenu} // Toggle the menu on click
+            >
+              <RiMenu4Fill className=" text-[18px] sm:text-[22px] md:text-[26px]  text-white" />
+            </div>
+
+            {/* Mobile Menu (Slide Down) */}
+            {isMenuOpen && (
+              <div className="lg:hidden absolute top-full left-0 w-full bg-[#1e1e1e] p-5 shadow-lg z-[999]">
+                <ul className="flex flex-col items-start gap-4 text-white">
+                  {menuData.map((item, index) => (
+                    <li key={index} className="w-full">
+                      <NavLink
+                        to={item.url}
+                        className="block text-[15px] font-poppins font-medium"
+                        onClick={toggleMenu} // Close the menu on selection
+                      >
+                        {item.text}
+                      </NavLink>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            <div className="hidden md:block lg:w-[150px] xl:w-[250px] text-right group">
               <Button
                 className="h-[38px] w-[130px] borde-0 bg-[#cb5c00] text-[15px] tracking-[1.5px] font-poppins font-medium text-white rounded-[30px] transition-all duration-700 hover:border-black cursor-pointer shadow-[2px_3px_3px_1px_#B9B7BD]"
                 text="Book Now"

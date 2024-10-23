@@ -91,7 +91,7 @@ const Rooms = () => {
 
   return (
     <div className="pb-[80px]">
-      <div className="max-w-container mx-auto">
+      <div className="max-w-container mx-4 sm:mx-5 md:mx-6 xl:mx-auto">
         <div className="flex flex-col justify-center items-center gap-[10px]">
           <small className="text-[18px] text-[#1e1e1e] font-poppins font-semibold">
             Luxury Suites
@@ -100,22 +100,24 @@ const Rooms = () => {
             Our Best <span className="text-[#9d7e54]">Rooms</span>
           </h2>
         </div>
-        <div className="mt-10 grid grid-cols-3 justify-between items-center gap-[35px]">
-          {roomData.map((item) => (
-            <RoomCard
-              key={item.id}
-              src1={item.img1}
-              btn1={item.btn1}
-              src2={item.img2}
-              price={item.price}
-              title={item.title}
-              li1={item.li1}
-              li2={item.li2}
-              li3={item.li3}
-              li4={item.li4}
-              btn2={item.btn2}
-            />
-          ))}
+        <div className="text-center flex justify-center items-center">
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[35px]">
+            {roomData.map((item) => (
+              <RoomCard
+                key={item.id}
+                src1={item.img1}
+                btn1={item.btn1}
+                src2={item.img2}
+                price={item.price}
+                title={item.title}
+                li1={item.li1}
+                li2={item.li2}
+                li3={item.li3}
+                li4={item.li4}
+                btn2={item.btn2}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

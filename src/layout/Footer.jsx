@@ -18,8 +18,8 @@ const Footer = () => {
 
   return (
     <div className="py-[40px] bg-[#1e1e1e]">
-      <div className="max-w-container mx-auto">
-        <div className="grid grid-cols-4 gap-[40px]">
+      <div className="max-w-container mx-4 sm:mx-5 md:mx-6 xl:mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-between text-center sm:text-left lg:grid-cols-4 gap-[40px]">
           <div>
             <h2>
               <Link

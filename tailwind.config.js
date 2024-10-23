@@ -22,6 +22,16 @@ export default {
       animation: {
         shake: "shake 0.5s ease-in-out",
       },
+      screens: {
+          'xs': '400px',
+          'sm': '576px',
+          'md': '768px',
+          'lg': '992px',
+          'xl': '1200px',
+          '2xl': '1400px',
+          '3xl': '1600px',
+          '4xl': '1920px'
+      },
     },
   },
   plugins: [],

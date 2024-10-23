@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -25,7 +26,7 @@ const Amenities = () => {
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet hic porro error architecto perferendis dolores consequuntur quo commodi repellendus sequi, impedit repellat tenetur molestiae autem!",
     },
     {
-      id: 0,
+      id: 2,
       img: img3,
       title: "Restro & Cafe",
       description:
@@ -35,12 +36,12 @@ const Amenities = () => {
 
   return (
     <div className="pb-[80px]">
-      <div className="max-w-container mx-auto">
-        <div className="flex flex-col justify-center items-center gap-[10px]">
+      <div className="max-w-container mx-auto px-4">
+        <div className="flex flex-col justify-center items-center gap-[10px] text-center">
           <small className="text-[18px] text-[#1e1e1e] font-poppins font-semibold">
             Luxury Amenities
           </small>
-          <h2 className="text-[35px] text-[#1e1e1e] font-playfair font-bold">
+          <h2 className="text-[28px] sm:text-[35px] text-[#1e1e1e] font-playfair font-bold">
             Our Best <span className="text-[#9d7e54]">Amenities</span>
           </h2>
         </div>
@@ -54,12 +55,11 @@ const Amenities = () => {
             }}
             speed={2000}
             modules={[Autoplay]}
-            className="w-[100%]"
+            className="w-full"
           >
             {amenitiesData.map((amenity) => (
-              <SwiperSlide>
+              <SwiperSlide key={amenity.id}>
                 <AmenitiesCard
-                  key={amenity.id}
                   src={amenity.img}
                   title={amenity.title}
                   description={amenity.description}

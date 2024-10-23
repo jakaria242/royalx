@@ -46,7 +46,7 @@ const Service = () => {
 
   return (
     <div className="pb-[80px]">
-      <div className="max-w-container mx-auto">
+      <div className="max-w-container mx-4 sm:mx-5 md:mx-6 xl:mx-auto">
         <div className="flex flex-col justify-center items-center gap-[10px]">
           <small className="text-[18px] text-[#1e1e1e] font-poppins font-semibold">
             Facilities
@@ -55,7 +55,7 @@ const Service = () => {
             Our Best <span className="text-[#9d7e54]">Services</span>
           </h2>
         </div>
-        <div className="mt-10 grid grid-cols-4 justify-between gap-[30px]">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-between gap-[30px]">
           {serviceData.map((item, index) => (
             <ServiceCard
               key={index}
