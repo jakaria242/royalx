@@ -72,7 +72,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`py-3 bg-[#00000062] w-[100%] fixed top-0 left-0 z-[999] ${
+        className={`py-3 bg-[#00000062]  w-[100%] fixed top-0 left-0 z-[999] ${
           scrolled ? "bg-[#1e1e1e]" : "bg-[#00000036]"
         }`}
         ref={navRef}
