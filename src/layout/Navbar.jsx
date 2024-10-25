@@ -162,7 +162,7 @@ const Navbar = () => {
             {/* Mobile Menu (Slide Down) */}
             {isMenuOpen && (
               <div className="lg:hidden absolute top-full left-0 w-full bg-[#1e1e1e] p-5 shadow-lg z-[999]">
-                <ul className="flex flex-col items-start gap-4 text-white">
+                <ul className="flex flex-col items-start  md:text-center gap-4 text-white">
                   {menuData.map((item, index) => (
                     <li key={index} className="w-full">
                       <NavLink
