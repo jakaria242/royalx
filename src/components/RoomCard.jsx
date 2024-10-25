@@ -15,7 +15,7 @@ const RoomCard = ({
   btn2,
 }) => {
   return (
-    <div className="w-[365px] h-[300px] group [perspective:1000px] cursor-pointer">
+    <div className="w-[320px] sm:w-[365px] h-[300px] group [perspective:1000px] cursor-pointer">
       <div className="relative h-full w-full rounded-[20px] [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] transition-transform duration-500 ease-in-out">
         {/* Front Face */}
         <div className="absolute inset-0 h-full w-full rounded-[20px] [backface-visibility:hidden]">

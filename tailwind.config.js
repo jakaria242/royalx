@@ -23,7 +23,7 @@ export default {
         shake: "shake 0.5s ease-in-out",
       },
       screens: {
-          'xs': '380px',
+          'xs': '400px',
           'sm': '576px',
           'md': '768px',
           'lg': '992px',
