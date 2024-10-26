@@ -15,7 +15,7 @@ const RoomCard = ({
   btn2,
 }) => {
   return (
-    <div className="w-[320px] sm:w-[365px] h-[300px] group [perspective:1000px] cursor-pointer">
+    <div className="w-[350px] sm:w-[365px] h-[300px] group [perspective:1000px] cursor-pointer">
       <div className="relative h-full w-full rounded-[20px] [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] transition-transform duration-500 ease-in-out">
         {/* Front Face */}
         <div className="absolute inset-0 h-full w-full rounded-[20px] [backface-visibility:hidden]">
@@ -26,7 +26,10 @@ const RoomCard = ({
           />
           <div className="absolute inset-0 flex items-end justify-center p-[25px] z-[1]">
             <Button
-              className="w-full borde-0 bg-[#cb5c00] text-[15px] tracking-[1.5px] font-poppins font-medium text-white rounded-[30px] transition-all duration-700 hover:border-black cursor-pointer shadow-[2px_3px_3px_1px_#B9B7BD] p-[5px]"
+                style={{
+                  backfaceVisibility: 'hidden',
+                }}
+              className="[backface-visibility:hidden] w-full borde-0 bg-[#cb5c00] text-[15px] tracking-[1.5px] font-poppins font-medium text-white rounded-[30px] transition-all duration-700 hover:border-black cursor-pointer shadow-[2px_3px_3px_1px_#B9B7BD] p-[5px] "
               text={btn1}
             />
           </div>
